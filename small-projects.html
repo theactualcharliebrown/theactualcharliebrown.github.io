@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="The actual Charlie Brown-An industrial ninja! This page will connect to others"
+    />
+    <title>Small Projects</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <button class="toggler-button" onclick="toggler()">
+      Toggle dark/light mode
+    </button>
+    <div class="nav-menu">
+      <a class="active" href="index.html">Home</a>
+      <a href="about-us.html">About Us</a>
+      <a href="contact-us.html">Contact Us</a>
+      <a href="small-projects.html">Small Projects</a>
+      <a href="resume.html">Resume</a>
+    </div>
+
+    <main class="grid">
+      <div class="container grid-item bottom-grid-item">
+        <h1>List Sorter</h1>
+        <h3>
+          Enter any array of numbers separated by commas in the field below,
+          then click the "Sort" button.
+        </h3>
+        <form>
+          <div class="mb-3">
+            <input
+              class="form-control"
+              type="text"
+              id="inputList"
+              placeholder="Enter comma-separated numbers"
+            />
+          </div>
+          <button class="btn btn-primary" id="sortButton">Sort</button>
+        </form>
+        <div id="outputBox" class="output-style mt-3">
+          <p>Sorted List will appear here</p>
+        </div>
+      </div>
+      <hr />
+
+      <div class="todo-list">
+        <h1>A To-do list built with React</h1>
+        <iframe
+          class="iframe"
+          src="https://react-js-project-ten.vercel.app/"
+          height="400px"
+          width="1200px"
+        ></iframe>
+      </div>
+      <hr />
+
+      <!-- Playing with Google Maps API -->
+
+      <h1>Playing with the Google Maps API</h1>
+
+      <div
+        id="map"
+        class="container grid-item bottom-grid-item"
+        style="width: 100%; height: 400px"
+      ></div>
+      <div class="container grid-item">
+        <h3 style="color: red">
+          Functionality of this project is no longer supported as the Google API
+          Key is not currently financially viable.
+        </h3>
+        <h2>Input an address to place a marker on the map</h2>
+        <form>
+          <div class="mb-3">
+            <label for="markerAddress" class="form-label">Place Marker:</label>
+            <input
+              type="text"
+              class="form-control"
+              id="markerAddress"
+              placeholder="Address"
+            />
+          </div>
+          <button class="btn btn-primary" type="button" onclick="placeMarker()">
+            Place
+          </button>
+        </form>
+        <hr />
+
+        <!-- Direction Form -->
+
+        <h2>Input origin and destination addresses to search a route</h2>
+        <form>
+          <div class="mb-3">
+            <label for="origin" class="form-label">Origin</label>
+            <input
+              id="origin"
+              class="form-control"
+              type="textbox"
+              placeholder="Origin"
+            />
+          </div>
+          <div class="mb-3">
+            <label for="destination" class="form-label">Destination</label>
+            <input
+              id="destination"
+              class="form-control"
+              type="textbox"
+              placeholder="Destination"
+            />
+          </div>
+          <button class="btn btn-primary" type="button" onclick="calcRoute()">
+            Search Route
+          </button>
+        </form>
+        <hr />
+
+        <!-- Circle Form -->
+
+        <h2>
+          Input Latitude and Longitude coordinates to place a circle. (Find
+          Latitude and Longitude
+          <a href="https://www.latlong.net/" target="_blank">here)</a>
+        </h2>
+        <form>
+          <div class="mb-3">
+            <label for="circleLat" class="form-label">Latitude:</label>
+            <input
+              type="number"
+              class="form-control"
+              id="circleLat"
+              placeholder="Circle Latitude"
+            />
+          </div>
+          <div class="mb-3">
+            <label for="circleLong" class="form-label">Longitude:</label>
+            <input
+              type="number"
+              class="form-control"
+              id="circleLong"
+              placeholder="Circle Longitude"
+            />
+          </div>
+          <div class="mb-3">
+            <label for="circleRad" class="form-label">Radius:</label>
+            <input
+              type="number"
+              class="form-control"
+              id="circleRad"
+              placeholder="Circle Radius"
+              value="60"
+            />
+          </div>
+          <button
+            class="btn btn-primary"
+            type="button"
+            onclick="createCircle()"
+          >
+            Create Circle
+          </button>
+        </form>
+        <hr />
+
+        <!-- Rectangle Form -->
+
+        <h2>
+          Input 2 Latitude and 2 Longitude coordinates to place a rectangle.
+          (Find Latitude and Longitude
+          <a href="https://www.latlong.net/" target="_blank">here)</a>
+        </h2>
+        <form>
+          <div class="mb-3">
+            <label for="rectLat1" class="form-label">North:</label>
+            <input
+              type="number"
+              class="form-control"
+              id="rectLat1"
+              placeholder="Rectangle Latitude 1"
+            />
+          </div>
+          <div class="mb-3">
+            <label for="rectLat2" class="form-label">South:</label>
+            <input
+              type="number"
+              class="form-control"
+              id="rectLat2"
+              placeholder="Rectangle Latitude 2"
+            />
+          </div>
+          <div class="mb-3">
+            <label for="rectLong1" class="form-label">East:</label>
+            <input
+              type="number"
+              class="form-control"
+              id="rectLong1"
+              placeholder="Rectangle Longitude 1"
+            />
+          </div>
+          <div class="mb-3">
+            <label for="rectLong2" class="form-label">West:</label>
+            <input
+              type="number"
+              class="form-control"
+              id="rectLong2"
+              placeholder="Rectangle Longitude 2"
+            />
+          </div>
+          <button
+            class="btn btn-primary"
+            type="button"
+            onclick="createRectangle()"
+          >
+            Create Rectangle
+          </button>
+        </form>
+        <hr />
+        <h2>
+          You can also click anywhere on the map to see the Latitude and
+          Longitude of that location
+        </h2>
+      </div>
+    </main>
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap&v=weekly"
+      defer
+    ></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="javascript/javascript.js"></script>
+  </body>
+</html>
